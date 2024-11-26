@@ -42,5 +42,123 @@ class Pawn extends Piece {
     }
 }
 
-// Add other piece classes (Rook, Knight, Bishop, Queen, King)
-// with their respective movement patterns
+class Rook extends Piece {
+    getValidMoves(board) {
+        const moves = [];
+        const directions = [[0, 1], [1, 0], [0, -1], [-1, 0]];
+        const [x, y] = this.position;
+
+        directions.forEach(([dx, dy]) => {
+            let newX = x + dx;
+            let newY = y + dy;
+            while (board.isValidPosition(newX, newY)) {
+                const piece = board.getPiece([newX, newY]);
+                if (!piece) {
+                    moves.push([newX, newY]);
+                } else {
+                    if (piece.color !== this.color) {
+                        moves.push([newX, newY]);
+                    }
+                    break;
+                }
+                newX += dx;
+                newY += dy;
+            }
+        });
+        return moves;
+    }
+}
+
+class Knight extends Piece {
+    getValidMoves(board) {
+        const moves = [];
+        const jumps = [[2, 1], [1, 2], [-1, 2], [-2, 1], [-2, -1], [-1, -2], [1, -2], [2, -1]];
+        const [x, y] = this.position;
+
+        jumps.forEach(([dx, dy]) => {
+            const newX = x + dx;
+            const newY = y + dy;
+            if (board.isValidPosition(newX, newY)) {
+                const piece = board.getPiece([newX, newY]);
+                if (!piece || piece.color !== this.color) {
+                    moves.push([newX, newY]);
+                }
+            }
+        });
+        return moves;
+    }
+}
+
+class Bishop extends Piece {
+    getValidMoves(board) {
+        const moves = [];
+        const directions = [[1, 1], [1, -1], [-1, 1], [-1, -1]];
+        const [x, y] = this.position;
+
+        directions.forEach(([dx, dy]) => {
+            let newX = x + dx;
+            let newY = y + dy;
+            while (board.isValidPosition(newX, newY)) {
+                const piece = board.getPiece([newX, newY]);
+                if (!piece) {
+                    moves.push([newX, newY]);
+                } else {
+                    if (piece.color !== this.color) {
+                        moves.push([newX, newY]);
+                    }
+                    break;
+                }
+                newX += dx;
+                newY += dy;
+            }
+        });
+        return moves;
+    }
+}
+
+class Queen extends Piece {
+    getValidMoves(board) {
+        const moves = [];
+        const directions = [[0, 1], [1, 0], [0, -1], [-1, 0], [1, 1], [1, -1], [-1, 1], [-1, -1]];
+        const [x, y] = this.position;
+
+        directions.forEach(([dx, dy]) => {
+            let newX = x + dx;
+            let newY = y + dy;
+            while (board.isValidPosition(newX, newY)) {
+                const piece = board.getPiece([newX, newY]);
+                if (!piece) {
+                    moves.push([newX, newY]);
+                } else {
+                    if (piece.color !== this.color) {
+                        moves.push([newX, newY]);
+                    }
+                    break;
+                }
+                newX += dx;
+                newY += dy;
+            }
+        });
+        return moves;
+    }
+}
+
+class King extends Piece {
+    getValidMoves(board) {
+        const moves = [];
+        const directions = [[0, 1], [1, 0], [0, -1], [-1, 0], [1, 1], [1, -1], [-1, 1], [-1, -1]];
+        const [x, y] = this.position;
+
+        directions.forEach(([dx, dy]) => {
+            const newX = x + dx;
+            const newY = y + dy;
+            if (board.isValidPosition(newX, newY)) {
+                const piece = board.getPiece([newX, newY]);
+                if (!piece || piece.color !== this.color) {
+                    moves.push([newX, newY]);
+                }
+            }
+        });
+        return moves;
+    }
+}
