@@ -1,0 +1,12 @@
+{
+  "name": "chess-tests",
+  "version": "1.0.0",
+  "description": "Test suite for chess game",
+  "scripts": {
+    "test": "mocha 'chessTests/**/*.js'"
+  },
+  "devDependencies": {
+    "mocha": "^9.1.3",
+    "assert": "^2.0.0"
+  }
+}

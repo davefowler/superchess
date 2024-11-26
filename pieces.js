@@ -1,3 +1,14 @@
+// Add module exports
+module.exports = {
+    Piece,
+    Pawn,
+    Rook,
+    Knight,
+    Bishop,
+    Queen,
+    King
+};
+
 class Piece {
     constructor(color, position) {
         this.color = color;

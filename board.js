@@ -1,3 +1,7 @@
+module.exports = {
+    Board
+};
+
 class Board {
     constructor() {
         this.squares = Array(8).fill().map(() => Array(8).fill(null));
