@@ -1,0 +1,7 @@
+auto-commits: true
+
+auto-test: true
+test-cmd: "npm test"
+editor: cursor
+suggest-shell-commands: true
+
