@@ -156,14 +156,30 @@ class King extends Piece {
                 const piece = board.getPiece([newX, newY]);
                 if (!piece || piece.color !== this.color) {
                     // Check if this move would put king in check
-                    const isUnderAttack = this.isSquareUnderAttack(board, [newX, newY]);
-                    if (!isUnderAttack) {
+                    if (!this.isSquareUnderAttack(board, [newX, newY])) {
                         moves.push([newX, newY]);
                     }
                 }
             }
         });
         return moves;
+    }
+
+    isSquareUnderAttack(board, position) {
+        const [x, y] = position;
+        // Check all enemy pieces to see if they can attack this square
+        for (let i = 0; i < 8; i++) {
+            for (let j = 0; j < 8; j++) {
+                const piece = board.getPiece([i, j]);
+                if (piece && piece.color !== this.color) {
+                    const moves = piece.getValidMoves(board);
+                    if (moves.some(([mx, my]) => mx === x && my === y)) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
 }
 
