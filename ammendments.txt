@@ -1,0 +1,52 @@
+# Super Amendments to the rules of Chess
+
+Amendment #1: Setup
+
+   The setup for the board is not using the back 3 lines but using the 3 corner squares on each side.
+
+                                           Rest of Board
+    | Pawn  | Pawn  |       |       |       |       | Pawn  | Pawn  |
+    | Rook  | Knight| Pawn  |       |       | Pawn  | Knight| Rook  |
+    | King  | Bishop| Pawn  |       |       | Pawn  | Bishop| Queen |
+    ---------------------------------------------------------------------
+
+Amendment #2: Black moves first
+
+Amendment #3: Pawns in the front cannot move 2 spaces on their first move,
+             only side pawns may do this.
+
+Amendment #4: Teleporting
+    Conditions: Both of acting player's rooks must be eliminated. One
+                of the teleporting pieces must be the king.
+    Procedure: Any time during the game you can take the king and any
+               piece within a three square radius of the king and put
+               your rooks underneath them to make them teleporters.
+               This takes one move. The pieces act as they always
+               would except you can switch their places one time. This
+               also takes a turn. You can only use this move once per game.
+
+Amendment #5: (the ol') "Fork in the Eye" (trick)
+    You may assassinate (murder) any of your own pieces, except the king. This takes one
+    turn for each piece.
+
+Amendment #6: Transforming Revival
+    Bishops are the transforming pieces. At any point in the game, with the
+    exception of course of an impending check, the player may choose to transform
+    a living bishop into a previously terminated piece.
+
+Amendment #7: Queen Suicide Bomber
+    The Queen may destroy herself any time and take out all pieces in danger of
+    her attack within a 2 square radius. Pieces of the queen's color are also
+    eliminated in the explosion. This takes one move.
+
+Amendment #8: Fusing Pieces
+    If you can move legally into a square currently occupied by your own piece
+    the two pieces may fuse creating a combination piece with attributes of
+    both pieces. This cannot be done with the king. They are permanently
+    fused after this move and cannot be separated. This takes one turn.
+
+Amendment #9: Check Matin' (the sexy kind)
+    The queen may move and share a square/(bed of hot lovin') with the king for
+    one move where upon she must move away/(get out of his damned house) the very
+    next move leaving a baby pawn behind, to be placed within a one square radius of
+    the king.
