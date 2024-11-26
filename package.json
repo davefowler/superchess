@@ -1,0 +1,12 @@
+{
+  "name": "super-chess",
+  "version": "1.0.0",
+  "description": "Super Chess game with special rules",
+  "scripts": {
+    "test": "cd tests/chessTests && mocha pieceMovementTests.js"
+  },
+  "devDependencies": {
+    "mocha": "^9.1.3",
+    "assert": "^2.0.0"
+  }
+}
