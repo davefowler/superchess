@@ -49,5 +49,9 @@ class Board {
     }
 }
 
-// Make Board available globally
-window.Board = Board;
+// Export for Node.js, attach to window for browser
+if (typeof window !== 'undefined') {
+    window.Board = Board;
+} else {
+    module.exports = { Board };
+}
