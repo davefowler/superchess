@@ -1,5 +1,6 @@
-const assert = require('assert');
-const { Board } = require('../../board.js');
+import assert from 'assert';
+import { Board } from '../../board.js';
+import { Pawn, Rook, Knight, Bishop, Queen, King } from '../../pieces.js';
 
 describe('Board Setup Tests', () => {
     let board;

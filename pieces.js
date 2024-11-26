@@ -184,23 +184,4 @@ class King extends Piece {
 }
 
 
-// Export for Node.js, attach to window for browser
-if (typeof window !== 'undefined') {
-    window.Piece = Piece;
-    window.Pawn = Pawn;
-    window.Rook = Rook;
-    window.Knight = Knight;
-    window.Bishop = Bishop;
-    window.Queen = Queen;
-    window.King = King;
-} else {
-    module.exports = {
-        Piece,
-        Pawn,
-        Rook,
-        Knight,
-        Bishop,
-        Queen,
-        King
-    };
-}
+export { Piece, Pawn, Rook, Knight, Bishop, Queen, King };

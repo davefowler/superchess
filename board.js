@@ -1,5 +1,4 @@
-// Import piece classes
-const { Pawn, Rook, Knight, Bishop, Queen, King } = typeof window !== 'undefined' ? window : require('./pieces.js');
+import { Pawn, Rook, Knight, Bishop, Queen, King } from './pieces.js';
 
 class Board {
     constructor() {
@@ -52,9 +51,4 @@ class Board {
     }
 }
 
-// Export for Node.js, attach to window for browser
-if (typeof window !== 'undefined') {
-    window.Board = Board;
-} else {
-    module.exports = { Board };
-}
+export { Board };

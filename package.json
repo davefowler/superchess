@@ -2,8 +2,9 @@
   "name": "super-chess",
   "version": "1.0.0",
   "description": "Super Chess game with special rules",
+  "type": "module",
   "scripts": {
-    "test": "cd tests/chessTests && mocha pieceMovementTests.js"
+    "test": "cd tests/chessTests && mocha --experimental-modules pieceMovementTests.js boardSetupTests.js"
   },
   "devDependencies": {
     "mocha": "^9.1.3",
