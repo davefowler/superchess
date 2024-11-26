@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Test suite for chess game",
   "scripts": {
-    "test": "mocha 'chessTests/**/*.js'"
+    "test": "mocha pieceMovementTests.js"
   },
   "devDependencies": {
     "mocha": "^9.1.3",

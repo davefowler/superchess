@@ -79,4 +79,76 @@ describe('Piece Movement Tests', () => {
             });
         });
     });
+
+    describe('Bishop Movement', () => {
+        it('should move diagonally', () => {
+            const bishop = new Bishop('white', [4, 4]);
+            board.squares[4][4] = bishop;
+            const validMoves = bishop.getValidMoves(board);
+            
+            // Check diagonal moves in all directions
+            assert(validMoves.some(move => move[0] === 2 && move[1] === 2)); // up-left
+            assert(validMoves.some(move => move[0] === 2 && move[1] === 6)); // up-right
+            assert(validMoves.some(move => move[0] === 6 && move[1] === 2)); // down-left
+            assert(validMoves.some(move => move[0] === 6 && move[1] === 6)); // down-right
+        });
+
+        it('should not move through pieces', () => {
+            const bishop = new Bishop('white', [4, 4]);
+            const blockingPiece = new Pawn('white', [3, 3]);
+            board.squares[4][4] = bishop;
+            board.squares[3][3] = blockingPiece;
+            const validMoves = bishop.getValidMoves(board);
+            assert(!validMoves.some(move => move[0] === 2 && move[1] === 2));
+        });
+    });
+
+    describe('Queen Movement', () => {
+        it('should move horizontally, vertically and diagonally', () => {
+            const queen = new Queen('white', [4, 4]);
+            board.squares[4][4] = queen;
+            const validMoves = queen.getValidMoves(board);
+            
+            // Check horizontal moves
+            assert(validMoves.some(move => move[0] === 4 && move[1] === 0));
+            assert(validMoves.some(move => move[0] === 4 && move[1] === 7));
+            
+            // Check vertical moves
+            assert(validMoves.some(move => move[0] === 0 && move[1] === 4));
+            assert(validMoves.some(move => move[0] === 7 && move[1] === 4));
+            
+            // Check diagonal moves
+            assert(validMoves.some(move => move[0] === 2 && move[1] === 2));
+            assert(validMoves.some(move => move[0] === 6 && move[1] === 6));
+        });
+    });
+
+    describe('King Movement', () => {
+        it('should move one square in any direction', () => {
+            const king = new King('white', [4, 4]);
+            board.squares[4][4] = king;
+            const validMoves = king.getValidMoves(board);
+            
+            const expectedMoves = [
+                [3, 3], [3, 4], [3, 5], // Top row
+                [4, 3], [4, 5],         // Middle row
+                [5, 3], [5, 4], [5, 5]  // Bottom row
+            ];
+            
+            expectedMoves.forEach(([x, y]) => {
+                assert(validMoves.some(move => move[0] === x && move[1] === y));
+            });
+        });
+
+        it('should not move into check', () => {
+            const king = new King('white', [4, 4]);
+            const enemyRook = new Rook('black', [4, 0]);
+            board.squares[4][4] = king;
+            board.squares[4][0] = enemyRook;
+            const validMoves = king.getValidMoves(board);
+            
+            // King should not be able to move horizontally into rook's line of attack
+            assert(!validMoves.some(move => move[0] === 4 && move[1] === 3));
+        });
+    });
 });
