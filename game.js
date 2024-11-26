@@ -44,6 +44,9 @@ class Game {
                 if (piece) {
                     const pieceElement = document.createElement('div');
                     pieceElement.className = `piece ${piece.color} ${piece.constructor.name.toLowerCase()}`;
+                    // Add Unicode chess symbols
+                    const symbol = this.getPieceSymbol(piece);
+                    pieceElement.textContent = symbol;
                     square.appendChild(pieceElement);
                 }
 
@@ -68,6 +71,28 @@ class Game {
             this.selectedPiece = piece;
             this.highlightValidMoves(piece);
         }
+    }
+
+    getPieceSymbol(piece) {
+        const symbols = {
+            'white': {
+                'King': '♔',
+                'Queen': '♕',
+                'Rook': '♖',
+                'Bishop': '♗',
+                'Knight': '♘',
+                'Pawn': '♙'
+            },
+            'black': {
+                'King': '♚',
+                'Queen': '♛',
+                'Rook': '♜',
+                'Bishop': '♝',
+                'Knight': '♞',
+                'Pawn': '♟'
+            }
+        };
+        return symbols[piece.color][piece.constructor.name];
     }
 
     setupSpecialMoves() {
