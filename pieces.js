@@ -155,7 +155,11 @@ class King extends Piece {
             if (board.isValidPosition(newX, newY)) {
                 const piece = board.getPiece([newX, newY]);
                 if (!piece || piece.color !== this.color) {
-                    moves.push([newX, newY]);
+                    // Check if this move would put king in check
+                    const isUnderAttack = this.isSquareUnderAttack(board, [newX, newY]);
+                    if (!isUnderAttack) {
+                        moves.push([newX, newY]);
+                    }
                 }
             }
         });
