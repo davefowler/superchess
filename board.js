@@ -1,3 +1,6 @@
+// Import piece classes
+const { Pawn, Rook, Knight, Bishop, Queen, King } = typeof window !== 'undefined' ? window : require('./pieces.js');
+
 class Board {
     constructor() {
         this.squares = Array(8).fill().map(() => Array(8).fill(null));
