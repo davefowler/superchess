@@ -10,7 +10,7 @@ class Piece {
     }
 }
 
-// Add module exports
+// Add module exports after all classes are defined
 module.exports = {
     Piece,
     Pawn,
