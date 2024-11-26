@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Chess</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div id="board" class="chess-board"></div>
+        <div class="controls">
+            <div id="turn-display">Black's Turn</div>
+            <button id="special-moves">Special Moves</button>
+            <div id="special-moves-menu" class="hidden">
+                <button id="teleport">Teleport King</button>
+                <button id="assassinate">Fork in the Eye</button>
+                <button id="transform-bishop">Transform Bishop</button>
+                <button id="queen-bomb">Queen Suicide</button>
+                <button id="fuse-pieces">Fuse Pieces</button>
+                <button id="check-matin">Check Matin'</button>
+            </div>
+        </div>
+    </div>
+    <script src="pieces.js"></script>
+    <script src="board.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
