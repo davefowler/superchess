@@ -184,13 +184,11 @@ class King extends Piece {
 }
 
 
-// Add module exports after all classes are defined
-module.exports = {
-    Piece,
-    Pawn,
-    Rook,
-    Knight,
-    Bishop,
-    Queen,
-    King
-};
+// Make classes available globally
+window.Piece = Piece;
+window.Pawn = Pawn;
+window.Rook = Rook;
+window.Knight = Knight;
+window.Bishop = Bishop;
+window.Queen = Queen;
+window.King = King;

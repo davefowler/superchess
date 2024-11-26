@@ -1,5 +1,3 @@
-const { Pawn, Rook, Knight, Bishop, Queen, King } = require('./pieces.js');
-
 class Board {
     constructor() {
         this.squares = Array(8).fill().map(() => Array(8).fill(null));
@@ -51,6 +49,5 @@ class Board {
     }
 }
 
-module.exports = {
-    Board
-};
+// Make Board available globally
+window.Board = Board;
