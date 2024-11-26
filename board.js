@@ -1,7 +1,3 @@
-module.exports = {
-    Board
-};
-
 class Board {
     constructor() {
         this.squares = Array(8).fill().map(() => Array(8).fill(null));
@@ -52,3 +48,7 @@ class Board {
         return x >= 0 && x < 8 && y >= 0 && y < 8;
     }
 }
+
+module.exports = {
+    Board
+};
