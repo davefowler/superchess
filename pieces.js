@@ -10,17 +10,6 @@ class Piece {
     }
 }
 
-// Add module exports after all classes are defined
-module.exports = {
-    Piece,
-    Pawn,
-    Rook,
-    Knight,
-    Bishop,
-    Queen,
-    King
-};
-
 class Pawn extends Piece {
     getValidMoves(board) {
         const moves = [];
@@ -173,3 +162,15 @@ class King extends Piece {
         return moves;
     }
 }
+
+
+// Add module exports after all classes are defined
+module.exports = {
+    Piece,
+    Pawn,
+    Rook,
+    Knight,
+    Bishop,
+    Queen,
+    King
+};
