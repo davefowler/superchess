@@ -7,29 +7,38 @@ class Board {
     }
 
     setupPieces() {
-        // Modified setup according to Amendment #1
-        // Setup pawns
-        [0, 1, 6, 7].forEach(y => {
-            this.squares[0][y] = new Pawn('black', [0, y]);
-            this.squares[7][y] = new Pawn('white', [7, y]);
-        });
-
-        // Setup other pieces according to the new corner setup
-        // Black pieces (top-left)
+        // Setup according to Amendment #1
+        // Black pieces (top-left corner)
+        this.squares[0][0] = new Pawn('black', [0, 0]);
+        this.squares[0][1] = new Pawn('black', [0, 1]);
         this.squares[1][0] = new Rook('black', [1, 0]);
         this.squares[1][1] = new Knight('black', [1, 1]);
         this.squares[2][0] = new King('black', [2, 0]);
         this.squares[2][1] = new Bishop('black', [2, 1]);
+        
+        // Additional pawns for black
         this.squares[1][2] = new Pawn('black', [1, 2]);
         this.squares[2][2] = new Pawn('black', [2, 2]);
+        this.squares[0][6] = new Pawn('black', [0, 6]);
+        this.squares[0][7] = new Pawn('black', [0, 7]);
+        this.squares[1][6] = new Knight('black', [1, 6]);
+        this.squares[1][7] = new Rook('black', [1, 7]);
 
-        // White pieces (bottom-right)
-        this.squares[6][5] = new Pawn('white', [6, 5]);
-        this.squares[7][5] = new Pawn('white', [7, 5]);
-        this.squares[6][6] = new Knight('white', [6, 6]);
-        this.squares[6][7] = new Rook('white', [6, 7]);
-        this.squares[7][6] = new Bishop('white', [7, 6]);
+        // White pieces (bottom-right corner)
         this.squares[7][7] = new Queen('white', [7, 7]);
+        this.squares[7][6] = new Bishop('white', [7, 6]);
+        this.squares[6][7] = new Rook('white', [6, 7]);
+        this.squares[6][6] = new Knight('white', [6, 6]);
+        this.squares[5][7] = new King('white', [5, 7]);
+        this.squares[5][6] = new Bishop('white', [5, 6]);
+        
+        // Additional pawns for white
+        this.squares[6][5] = new Pawn('white', [6, 5]);
+        this.squares[5][5] = new Pawn('white', [5, 5]);
+        this.squares[7][1] = new Pawn('white', [7, 1]);
+        this.squares[7][0] = new Pawn('white', [7, 0]);
+        this.squares[6][1] = new Knight('white', [6, 1]);
+        this.squares[6][0] = new Rook('white', [6, 0]);
     }
 
     getPiece(position) {
