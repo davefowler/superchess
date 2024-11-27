@@ -1,11 +1,12 @@
 # Super Chess
 
-A variant of chess with special rules and moves designed by Dave Fowler and Wade Schwartz during high school study hall. Implementation coded with assistance from Aider and Claude Sonnet.
+A variant of chess with special rules and moves designed by [Dave Fowler](https://thingsilearned.com/about) and Wade Schwartz during high school study hall. Implementation coded with assistance from Aider and Claude Sonnet.
 
 ## Special Rules & Amendments
 
 ### Amendment #1: Modified Setup
-The setup uses 3 corner squares on each side instead of the traditional back rows:
+
+Superchess uses the exact same peices as chess but instead of the traditional back rows setup the pieces are instead pulled to the corners.  Each player's queen is on a bottom corner on her color.  The king is in the other bottom corner on the opposite color. The rest of the pieces are pulled to the corners as well as shown.  Here is one side of a player's setup: 
 
 ```
                                        Rest of Board
