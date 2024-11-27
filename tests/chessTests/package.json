@@ -4,7 +4,7 @@
   "description": "Test suite for chess game",
   "type": "module",
   "scripts": {
-    "test": "mocha --experimental-modules pieceMovementTests.js boardSetupTests.js"
+    "test": "mocha --experimental-modules pieceMovementTests.js boardSetupTests.js fusionTests.js"
   },
   "devDependencies": {
     "mocha": "^9.1.3",
