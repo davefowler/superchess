@@ -12,7 +12,7 @@ class Board {
         this.squares[0][0] = new King('black', [0, 0]);
         this.squares[0][1] = new Bishop('black', [0, 1]);
         this.squares[0][2] = new Pawn('black', [0, 2]);
-        this.squares[0][6] = new Pawn('black', [0, 6]);
+        this.squares[0][6] = new Bishop('black', [0, 6]);
         this.squares[0][7] = new Queen('black', [0, 7]);
 
         // Black pieces (second row)
@@ -25,14 +25,14 @@ class Board {
         // Black pieces (third row)
         this.squares[2][0] = new Pawn('black', [2, 0]);
         this.squares[2][1] = new Pawn('black', [2, 1]);
-        this.squares[2][6] = new Bishop('black', [2, 6]);
-        this.squares[2][7] = new Rook('black', [2, 7]);
+        this.squares[2][6] = new Pawn('black', [2, 6]);
+        this.squares[2][7] = new Pawn('black', [2, 7]);
 
         // White pieces (bottom row)
         this.squares[7][0] = new King('white', [7, 0]);
         this.squares[7][1] = new Bishop('white', [7, 1]);
         this.squares[7][2] = new Pawn('white', [7, 2]);
-        this.squares[7][6] = new Pawn('white', [7, 6]);
+        this.squares[7][6] = new Bishop('white', [7, 6]);
         this.squares[7][7] = new Queen('white', [7, 7]);
 
         // White pieces (second from bottom)
@@ -45,8 +45,8 @@ class Board {
         // White pieces (third from bottom)
         this.squares[5][0] = new Pawn('white', [5, 0]);
         this.squares[5][1] = new Pawn('white', [5, 1]);
-        this.squares[5][6] = new Bishop('white', [5, 6]);
-        this.squares[5][7] = new Rook('white', [5, 7]);
+        this.squares[5][6] = new Pawn('white', [5, 6]);
+        this.squares[5][7] = new Pawn('white', [5, 7]);
     }
 
     getPiece(position) {
