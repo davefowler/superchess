@@ -57,8 +57,34 @@ class Game {
         }
     }
 
+    isValidMove(from, to) {
+        const piece = this.board.getPiece(from);
+        if (!piece) return false;
+        
+        const validMoves = piece.getValidMoves(this.board);
+        return validMoves.some(([x, y]) => x === to[0] && y === to[1]);
+    }
+
+    highlightValidMoves(piece) {
+        const validMoves = piece.getValidMoves(this.board);
+        const squares = document.querySelectorAll('.square');
+        
+        squares.forEach(square => {
+            const x = parseInt(square.dataset.x);
+            const y = parseInt(square.dataset.y);
+            if (validMoves.some(([mx, my]) => mx === x && my === y)) {
+                square.classList.add('highlighted');
+            }
+        });
+    }
+
     handleSquareClick(position) {
         const piece = this.board.getPiece(position);
+        
+        // Clear previous highlights
+        document.querySelectorAll('.square').forEach(square => {
+            square.classList.remove('highlighted');
+        });
 
         if (this.selectedPiece) {
             // Try to move the selected piece
