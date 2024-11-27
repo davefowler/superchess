@@ -39,11 +39,11 @@ describe('Board Setup Tests', () => {
         it('should have pawns in correct positions', () => {
             // Check black pawns
             assert(board.squares[0][2] instanceof Pawn && board.squares[0][2].color === 'black');
-            assert(board.squares[0][6] instanceof Pawn && board.squares[0][6].color === 'black');
+            assert(board.squares[0][5] instanceof Pawn && board.squares[0][5].color === 'black');
             assert(board.squares[1][2] instanceof Pawn && board.squares[1][2].color === 'black');
-            assert(board.squares[1][6] instanceof Pawn && board.squares[1][6].color === 'black');
-            assert(board.squares[2][0] instanceof Pawn && board.squares[2][0].color === 'black');
-            assert(board.squares[2][1] instanceof Pawn && board.squares[2][1].color === 'black');
+            assert(board.squares[1][5] instanceof Pawn && board.squares[1][5].color === 'black');
+            assert(board.squares[2][6] instanceof Pawn && board.squares[2][6].color === 'black');
+            assert(board.squares[2][7] instanceof Pawn && board.squares[2][7].color === 'black');
             
             // Check white pawns
             assert(board.squares[7][2] instanceof Pawn && board.squares[7][2].color === 'white');
