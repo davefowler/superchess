@@ -2,8 +2,9 @@
   "name": "chess-tests",
   "version": "1.0.0",
   "description": "Test suite for chess game",
+  "type": "module",
   "scripts": {
-    "test": "mocha pieceMovementTests.js boardSetupTests.js"
+    "test": "mocha --experimental-modules pieceMovementTests.js boardSetupTests.js"
   },
   "devDependencies": {
     "mocha": "^9.1.3",

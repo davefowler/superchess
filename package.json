@@ -1,15 +1,15 @@
 {
   "name": "super-chess",
   "version": "1.0.0",
-  "description": "Super Chess game with special rules",
+  "description": "Super Chess game with special rules", 
   "type": "module",
   "scripts": {
-    "test": "cd tests/chessTests && mocha --experimental-modules pieceMovementTests.js boardSetupTests.js",
+    "test": "cd tests/chessTests && mocha --experimental-modules --no-warnings pieceMovementTests.js boardSetupTests.js",
     "start": "node server.js"
   },
   "devDependencies": {
     "assert": "^2.0.0",
-    "express": "^4.21.1",
+    "express": "^4.21.1", 
     "mocha": "^9.1.3"
   }
 }
