@@ -20,8 +20,8 @@ describe('Board Setup Tests', () => {
             assert(board.squares[1][1] instanceof Knight && board.squares[1][1].color === 'black');
             assert(board.squares[1][7] instanceof Knight && board.squares[1][7].color === 'black');
             
-            assert(board.squares[2][7] instanceof Rook && board.squares[2][7].color === 'black');
-            assert(board.squares[2][6] instanceof Bishop && board.squares[2][6].color === 'black');
+            assert(board.squares[1][7] instanceof Rook && board.squares[1][7].color === 'black');
+            assert(board.squares[0][6] instanceof Bishop && board.squares[0][6].color === 'black');
 
             // Check white pieces (bottom three rows)
             assert(board.squares[7][0] instanceof King && board.squares[7][0].color === 'white');
