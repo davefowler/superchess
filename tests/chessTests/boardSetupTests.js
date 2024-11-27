@@ -16,16 +16,18 @@ describe('Board Setup Tests', () => {
             assert(board.squares[0][1] instanceof Pawn && board.squares[0][1].color === 'black');
             assert(board.squares[1][0] instanceof Rook && board.squares[1][0].color === 'black');
             assert(board.squares[1][1] instanceof Knight && board.squares[1][1].color === 'black');
+            assert(board.squares[1][2] instanceof Pawn && board.squares[1][2].color === 'black');
             assert(board.squares[2][0] instanceof King && board.squares[2][0].color === 'black');
             assert(board.squares[2][1] instanceof Bishop && board.squares[2][1].color === 'black');
+            assert(board.squares[2][2] instanceof Pawn && board.squares[2][2].color === 'black');
 
             // Check white pieces in bottom-right corner
-            assert(board.squares[7][6] instanceof Pawn && board.squares[7][6].color === 'white');
-            assert(board.squares[7][7] instanceof Pawn && board.squares[7][7].color === 'white');
+            assert(board.squares[6][5] instanceof Pawn && board.squares[6][5].color === 'white');
+            assert(board.squares[7][5] instanceof Pawn && board.squares[7][5].color === 'white');
             assert(board.squares[6][6] instanceof Knight && board.squares[6][6].color === 'white');
             assert(board.squares[6][7] instanceof Rook && board.squares[6][7].color === 'white');
-            assert(board.squares[5][6] instanceof Bishop && board.squares[5][6].color === 'white');
-            assert(board.squares[5][7] instanceof Queen && board.squares[5][7].color === 'white');
+            assert(board.squares[7][6] instanceof Bishop && board.squares[7][6].color === 'white');
+            assert(board.squares[7][7] instanceof Queen && board.squares[7][7].color === 'white');
         });
 
         it('should have pawns in correct positions', () => {

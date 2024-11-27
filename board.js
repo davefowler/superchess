@@ -15,13 +15,17 @@ class Board {
         });
 
         // Setup other pieces according to the new corner setup
-        // Black pieces
+        // Black pieces (top-left)
         this.squares[1][0] = new Rook('black', [1, 0]);
         this.squares[1][1] = new Knight('black', [1, 1]);
         this.squares[2][0] = new King('black', [2, 0]);
         this.squares[2][1] = new Bishop('black', [2, 1]);
+        this.squares[1][2] = new Pawn('black', [1, 2]);
+        this.squares[2][2] = new Pawn('black', [2, 2]);
 
-        // White pieces
+        // White pieces (bottom-right)
+        this.squares[6][5] = new Pawn('white', [6, 5]);
+        this.squares[7][5] = new Pawn('white', [7, 5]);
         this.squares[6][6] = new Knight('white', [6, 6]);
         this.squares[6][7] = new Rook('white', [6, 7]);
         this.squares[7][6] = new Bishop('white', [7, 6]);
