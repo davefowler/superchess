@@ -120,7 +120,11 @@ class Game {
                 'Pawn': '♟'
             }
         };
-        return symbols[piece.color][piece.constructor.name];
+        let symbol = symbols[piece.color][piece.constructor.name];
+        if (piece.fusedWith) {
+            symbol += symbols[piece.color][piece.fusedWith.constructor.name];
+        }
+        return symbol;
     }
 
     setupSpecialMoves() {

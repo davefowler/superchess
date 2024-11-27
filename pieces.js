@@ -3,6 +3,15 @@ class Piece {
         this.color = color;
         this.position = position;
         this.hasMoved = false;
+        this.fusedWith = null;
+    }
+
+    canFuseWith(piece) {
+        return piece && 
+               piece.color === this.color && 
+               !(piece instanceof King) && 
+               !this.fusedWith && 
+               !piece.fusedWith;
     }
 
     getValidMoves(board) {
@@ -154,7 +163,7 @@ class King extends Piece {
             const newY = y + dy;
             if (board.isValidPosition(newX, newY)) {
                 const piece = board.getPiece([newX, newY]);
-                if (!piece || piece.color !== this.color) {
+                if (!piece || piece.color !== this.color || this.canFuseWith(piece)) {
                     // Check if this move would put king in check
                     if (!this.isSquareUnderAttack(board, [newX, newY])) {
                         moves.push([newX, newY]);
@@ -162,7 +171,14 @@ class King extends Piece {
                 }
             }
         });
-        return moves;
+
+        // If piece is fused, add moves from the fused piece's capabilities
+        if (this.fusedWith) {
+            const fusedMoves = this.fusedWith.getValidMoves(board);
+            moves.push(...fusedMoves);
+        }
+
+        return [...new Set(moves.map(move => JSON.stringify(move)))].map(move => JSON.parse(move));
     }
 
     isSquareUnderAttack(board, position) {

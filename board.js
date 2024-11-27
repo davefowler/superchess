@@ -58,12 +58,23 @@ class Board {
     movePiece(from, to) {
         const [fromX, fromY] = from;
         const [toX, toY] = to;
-        const piece = this.squares[fromX][fromY];
+        const movingPiece = this.squares[fromX][fromY];
+        const targetPiece = this.squares[toX][toY];
         
-        if (piece) {
-            piece.position = to;
-            piece.hasMoved = true;
-            this.squares[toX][toY] = piece;
+        if (movingPiece) {
+            if (targetPiece && movingPiece.canFuseWith(targetPiece)) {
+                // Fuse the pieces
+                movingPiece.fusedWith = targetPiece;
+                targetPiece.fusedWith = movingPiece;
+                movingPiece.position = to;
+                movingPiece.hasMoved = true;
+                this.squares[toX][toY] = movingPiece;
+            } else {
+                // Normal move
+                movingPiece.position = to;
+                movingPiece.hasMoved = true;
+                this.squares[toX][toY] = movingPiece;
+            }
             this.squares[fromX][fromY] = null;
         }
     }
