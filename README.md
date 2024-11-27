@@ -2,6 +2,15 @@
 
 A variant of chess with special rules and moves designed by [Dave Fowler](https://thingsilearned.com/about) and Wade Schwartz during high school study hall. Implementation coded with assistance from Aider and Claude Sonnet.
 
+## Install and run
+
+```bash
+npm install
+npm start
+```
+
+will serve it up on [http://localhost:3000](http://localhost:3000)
+
 ## Special Rules & Amendments
 
 ### Amendment #1: Modified Setup
