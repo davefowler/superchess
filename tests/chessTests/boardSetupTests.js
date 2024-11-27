@@ -20,7 +20,7 @@ describe('Board Setup Tests', () => {
             assert(board.squares[1][1] instanceof Knight && board.squares[1][1].color === 'black');
             assert(board.squares[1][7] instanceof Knight && board.squares[1][7].color === 'black');
             
-            assert(board.squares[1][7] instanceof Rook && board.squares[1][7].color === 'black');
+            assert(board.squares[1][6] instanceof Rook && board.squares[1][7].color === 'black');
             assert(board.squares[0][6] instanceof Bishop && board.squares[0][6].color === 'black');
 
             // Check white pieces (bottom three rows)
@@ -30,10 +30,10 @@ describe('Board Setup Tests', () => {
             
             assert(board.squares[6][0] instanceof Rook && board.squares[6][0].color === 'white');
             assert(board.squares[6][1] instanceof Knight && board.squares[6][1].color === 'white');
-            assert(board.squares[6][7] instanceof Knight && board.squares[6][7].color === 'white');
+            assert(board.squares[6][6] instanceof Knight && board.squares[6][7].color === 'white');
             
-            assert(board.squares[5][7] instanceof Rook && board.squares[5][7].color === 'white');
-            assert(board.squares[5][6] instanceof Bishop && board.squares[5][6].color === 'white');
+            assert(board.squares[5][7] instanceof Pawn && board.squares[5][7].color === 'white');
+            assert(board.squares[5][6] instanceof Pawn && board.squares[5][6].color === 'white');
         });
 
         it('should have pawns in correct positions', () => {
@@ -49,7 +49,7 @@ describe('Board Setup Tests', () => {
             assert(board.squares[7][2] instanceof Pawn && board.squares[7][2].color === 'white');
             assert(board.squares[7][6] instanceof Pawn && board.squares[7][6].color === 'white');
             assert(board.squares[6][2] instanceof Pawn && board.squares[6][2].color === 'white');
-            assert(board.squares[6][6] instanceof Pawn && board.squares[6][6].color === 'white');
+            assert(board.squares[6][6] instanceof Knight && board.squares[6][6].color === 'white');
             assert(board.squares[5][0] instanceof Pawn && board.squares[5][0].color === 'white');
             assert(board.squares[5][1] instanceof Pawn && board.squares[5][1].color === 'white');
         });
